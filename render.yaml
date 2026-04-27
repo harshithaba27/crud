@@ -3,7 +3,7 @@ services:
     name: flask-supabase-crud
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn wsgi:app
+    startCommand: gunicorn app:app
     envVars:
       - key: SUPABASE_URL
         sync: false

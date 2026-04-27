@@ -19,3 +19,5 @@ def create_app():
         return render_template('index.html')
 
     return app
+
+app = create_app()
