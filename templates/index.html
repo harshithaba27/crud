@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentPortal AI | Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <!-- CRUD Section -->
+    <div class="glass-card">
+        <h2>Student Management</h2>
+        
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Full Name">
+            <input type="email" id="email" placeholder="Email Address">
+        </div>
+        <div style="display: flex; gap: 10px; margin-bottom: 2rem;">
+            <button id="submitBtn" onclick="addStudent()">Add Student</button>
+            <button id="cancelBtn" onclick="cancelEdit()" style="display:none;">Cancel Edit</button>
+        </div>
+
+        <div id="loading" style="display: none; color: var(--text-muted); margin-bottom: 1rem;">Loading student data...</div>
+        <ul id="list"></ul>
+    </div>
+
+    <!-- AI Chat Section -->
+    <div class="glass-card chat-container">
+        <h2>AI Records Assistant</h2>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message message-ai">
+                Hello! I am your Student Portal assistant. I can answer questions about the student records in your database.
+            </div>
+        </div>
+        <div id="aiLoading" class="typing" style="display: none;">AI is thinking...</div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Ask about students..." onkeypress="handleChatKey(event)">
+            <button onclick="askAI()">Send</button>
+        </div>
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
